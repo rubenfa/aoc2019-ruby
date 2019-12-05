@@ -1,4 +1,4 @@
-require_relative '../day01.rb'
+require_relative '../mod.rb'
 require 'test/unit'
 
 class TestDay01 < Test::Unit::TestCase
@@ -28,7 +28,8 @@ class TestDay01 < Test::Unit::TestCase
 
   def test_needed_fuel_for_input
     sum = 0
-    File.foreach('tests/fixtures/day01_input.txt') {|mass| sum += Mod.new(Integer(mass)).needed_fuel }
+    file =  File.join(File.dirname(__FILE__), 'fixtures/day01_input.txt')
+    File.foreach(file) {|mass| sum += Mod.new(Integer(mass)).needed_fuel }
     assert_equal(3495189, sum)
   end
 
