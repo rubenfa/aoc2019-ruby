@@ -1,4 +1,4 @@
-require_relative '../mod.rb'
+require_relative '../../lib/aoc2019/mod.rb'
 require 'test/unit'
 
 class TestDay01 < Test::Unit::TestCase

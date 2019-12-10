@@ -44,3 +44,18 @@ class GravityAssistant
   end
 end
 
+class ReverseGravityAssistant
+  def calculate(input, goal)
+    for noun in 0..99
+      for verb in 0..99
+        original = input.clone
+        original[1] = noun
+        original[2] = verb
+
+        assistant = GravityAssistant.new(original)
+        return noun, verb if assistant.calculate_incode[0] == goal
+      end
+    end
+   end
+end
+
